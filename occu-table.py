@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import random
 
 app = Flask(__name__)
 
@@ -16,7 +17,12 @@ def occupationsrender():
             OCUPATIONES[x[0].strip("\n")] = x[1].strip("\n")
 
     occupashuns.close()
-    return render_template("occupations.html", occudict = OCUPATIONES.items())
+    newoccdict = OCUPATIONES
+    del newoccdict['Total']
+    rando = random.randint(0, len(newoccdict.keys()));
+    randkey = newoccdict.keys()[rando]
+    randval = newoccdict.values()[rando]
+    return render_template("occupations.html", occudict = OCUPATIONES.items(), randoccukey = randkey, randoccuval = randval)
 
 if __name__ == "__main__":
     #app.debug = True
