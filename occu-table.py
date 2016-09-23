@@ -6,7 +6,7 @@ app = Flask(__name__)
 def occupationsrender():
     OCUPATIONES = {}
     occupashuns = open("occupations.csv", "rU")
-    occupashuns.readline()    
+    occupashuns.readline()
     for line in occupashuns:
         if line[0] == "\"":
             #i sincerely apologize for the next line, again
@@ -14,10 +14,10 @@ def occupationsrender():
         else:
             x = line.split(",")
             OCUPATIONES[x[0].strip("\n")] = x[1].strip("\n")
-            
+
     occupashuns.close()
     return render_template("occupations.html", occudict = OCUPATIONES.items())
-            
+
 if __name__ == "__main__":
-    app.debug = True
+    #app.debug = True
     app.run()
