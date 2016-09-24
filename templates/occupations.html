@@ -3,16 +3,19 @@
   <head>
     <title>Occupations</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
   </head>
   <body>
     <h1 style="padding: 15px ; font-family:'Raleway', sans-serif ; text-align: center ; font-size: 48px ; text-decoration: underline"><b>Occupations</b></h1>
     <table style="margin-left: auto ; margin-right: auto; font-family: 'Open Sans', sans-serif ; text-align: center ; border: 2px solid black ; border-radius: 5px">
       <th style="text-align: left ; padding: 10px">Occupations</th>
-      <th style="text-align: right ; padding: 10px">Percents</th>
+      <th style="text-align: center ; padding: 10px">Percents</th>
+      <th style="text-align: right ; padding: 10px">Information</th>
       {% for key, val in occudict %}
       <tr style="border: 2px solid black">
-        <td style="text-align: left ; padding: 10px ; padding-right: 10px"> {{ key }} </td>
-        <td style="padding: 10px ; padding-left: 15px"> {{ val }}% </td>
+        <td style="text-align: left ; padding: 10px; padding-right: 50px"> {{ key }} </td>
+        <td style="padding: 10px"> {{ val[0] }}% </td>
+        <td style="text-align: right ; padding: 10px ; padding-left: 50px"> <a href={{val[1]}} style="text-decoration: none ; color: #000000">Learn More<i class="fa fa-angle-right" style="font-size:24px ; padding-left: 10px ; padding-bottom: 3px ; vertical-align: middle"></i> </td>
       </tr>
       {% endfor %}
     </table>
