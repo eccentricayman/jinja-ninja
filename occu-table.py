@@ -22,9 +22,7 @@ def occupationsrender():
     newoccdict = OCUPATIONES
     del newoccdict['Total']
     rando = random.randint(0, len(newoccdict.keys()));
-    randkey = newoccdict.keys()[rando]
-    randval = newoccdict.values()[rando][0]
-    return render_template("occupations.html", occudict = OCUPATIONES.items(), randoccukey = randkey, randoccuval = randval)
+    return render_template("occupations.html", occudict = OCUPATIONES.items(), randoccu = [newoccdict.keys()[rando], newoccdict.values()[rando][0], newoccdict.values()[rando][1]])
 
 if __name__ == "__main__":
     #app.debug = True

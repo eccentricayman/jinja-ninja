@@ -10,15 +10,14 @@
     <table style="margin-left: auto ; margin-right: auto; font-family: 'Open Sans', sans-serif ; text-align: center ; border: 2px solid black ; border-radius: 5px">
       <th style="text-align: left ; padding: 10px">Occupations</th>
       <th style="text-align: center ; padding: 10px">Percents</th>
-      <th style="text-align: right ; padding: 10px">Information</th>
       {% for key, val in occudict %}
       <tr style="border: 2px solid black">
         <td style="text-align: left ; padding: 10px; padding-right: 50px"> {{ key }} </td>
         <td style="padding: 10px"> {{ val[0] }}% </td>
-        <td style="text-align: right ; padding: 10px ; padding-left: 50px"> <a href={{val[1]}} style="text-decoration: none ; color: #000000">Learn More<i class="fa fa-angle-right" style="font-size:24px ; padding-left: 10px ; padding-bottom: 3px ; vertical-align: middle"></i> </td>
       </tr>
       {% endfor %}
     </table>
-    <h2 style="padding: 15px ; font-family: 'Raleway', sans-serif ; text-align: center ; font-size: 24px">Random Occupation: {{ randoccukey }}, {{ randoccuval }}% </h2>
+    <h2 style="padding: 15px ; padding-bottom: 0px ; font-family: 'Raleway', sans-serif ; text-align: center ; font-size: 24px">Random Occupation: {{ randoccu[0] }}, {{ randoccu[1] }}% </h2>
+    <p style="text-align: center"><a href={{randoccu[2]}} target="_blank" style="text-decoration: none ; color: #000000 ; text-transform: uppercase ; font-family: 'Raleway', sans-serif">Learn More<i class="fa fa-angle-right" style="font-size:24px ; padding-left: 10px ; padding-bottom: 5px ; vertical-align: middle"></i></a></p>
   </body>
 </html>
