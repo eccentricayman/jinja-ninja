@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def occupationsrender():
     OCUPATIONES = {}
-    occupashuns = open("occupations.csv", "rU")
+    occupashuns = open("data/occupations.csv", "rU")
     occupashuns.readline()
     for line in occupashuns:
         if line[0] == "\"":

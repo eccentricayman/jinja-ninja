@@ -4,20 +4,21 @@
     <title>Occupations</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="static/main.css">
   </head>
   <body>
-    <h1 style="padding: 15px ; font-family:'Raleway', sans-serif ; text-align: center ; font-size: 48px ; text-decoration: underline"><b>Occupations</b></h1>
-    <table style="margin-left: auto ; margin-right: auto; font-family: 'Open Sans', sans-serif ; text-align: center ; border: 2px solid black ; border-radius: 5px">
-      <th style="text-align: left ; padding: 10px">Occupations</th>
-      <th style="text-align: center ; padding: 10px">Percents</th>
+    <h1><b>Occupations</b></h1>
+    <table>
+      <th class="box-leftu">Occupations</th>
+      <th class="box-rightu">Percents</th>
       {% for key, val in occudict %}
-      <tr style="border: 2px solid black">
-        <td style="text-align: left ; padding: 10px; padding-right: 50px"> {{ key }} </td>
-        <td style="padding: 10px"> {{ val[0] }}% </td>
+      <tr>
+        <td class="box-leftu"> {{ key }} </td>
+        <td class="box-rightu"> {{ val[0] }}% </td>
       </tr>
       {% endfor %}
     </table>
-    <h2 style="padding: 15px ; padding-bottom: 0px ; font-family: 'Raleway', sans-serif ; text-align: center ; font-size: 24px">Random Occupation: {{ randoccu[0] }}, {{ randoccu[1] }}% </h2>
-    <p style="text-align: center"><a href={{randoccu[2]}} target="_blank" style="text-decoration: none ; color: #000000 ; text-transform: uppercase ; font-family: 'Raleway', sans-serif">Learn More<i class="fa fa-angle-right" style="font-size:24px ; padding-left: 10px ; padding-bottom: 5px ; vertical-align: middle"></i></a></p>
+    <h2>Random Occupation: {{ randoccu[0] }}, {{ randoccu[1] }}% </h2>
+    <p><a href={{randoccu[2]}} target="_blank">Learn More<i class="fa fa-angle-right"></i></a></p>
   </body>
 </html>
